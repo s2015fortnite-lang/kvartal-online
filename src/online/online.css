@@ -1,0 +1,55 @@
+.online-lobby {
+  max-width: 660px;
+  margin: 48px auto;
+  padding: 32px;
+  background: #fffdf7;
+  border: 1px solid #deded1;
+  border-radius: 18px;
+}
+.online-lobby h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.1;
+}
+.online-lobby form,
+.online-lobby label {
+  display: grid;
+  gap: 12px;
+}
+.online-lobby label {
+  margin: 20px 0 12px;
+}
+.online-lobby input {
+  width: 100%;
+  min-width: 0;
+}
+.lobby-players {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+.lobby-players li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid #e3e3d9;
+  padding: 16px 0;
+}
+.lobby-players li > span {
+  font-size: 26px;
+}
+.lobby-players small {
+  margin-left: auto;
+}
+.network-note {
+  margin: 8px 0;
+  padding: 10px 14px;
+  background: #edf1e7;
+  border-radius: 8px;
+  font-size: 13px;
+}
+@media (max-width: 700px) {
+  .online-lobby {
+    margin: 20px 12px;
+    padding: 22px;
+  }
+}

@@ -1,0 +1,24 @@
+# Place this file and package.json at the root of the GitHub repository.
+# Paid web service + persistent disk. Review Render's cost before creating it.
+services:
+  - type: web
+    name: kvartal-online
+    runtime: node
+    region: frankfurt
+    plan: 0.5c-512mb
+    numInstances: 1
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeployTrigger: off
+    envVars:
+      - key: NODE_VERSION
+        value: '22'
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data/kvartal
+    disk:
+      name: kvartal-saves
+      mountPath: /var/data
+      sizeGB: 1
